@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnSecond: Button = findViewById(R.id.btnSecond)
         btnSecond.setOnClickListener{
+
 //            get the user input on the text field
             val userInput: EditText = findViewById(R.id.userInput)
             val msg: String = userInput.text.toString()
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
 //            redirect to the another page
             val intent = Intent(this,SecondActivity::class.java)
+
+//            pass the user input data to the layout 02
+            intent.putExtra("user_input",msg)
+
+//            pass the current layout data to target layout
             startActivity(intent)
 
 
